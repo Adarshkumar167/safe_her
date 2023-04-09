@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:safe_her/components/navBar.dart';
+import 'package:safe_her/screens/audio.dart';
+import 'package:safe_her/screens/maps.dart';
+import 'package:safe_her/screens/recordings.dart';
+import 'package:safe_her/screens/sosSettings.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -15,12 +19,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.4467,
+            height: MediaQuery.of(context).size.height * 0.4729,
             width: MediaQuery.of(context).size.width,
-            color: Color.fromRGBO(37, 43, 57, 1),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(37, 43, 57, 1),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20.0),
+                bottomRight: Radius.circular(20.0),
+              ),
+            ),
             child: Column(
               children: [
                 Padding(
@@ -100,14 +110,8 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: SizedBox(
-              height: 50,
-              width: MediaQuery.of(context).size.width,
-            ),
+          SizedBox(
+            height: 50,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,7 +121,12 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
                     height: 40.0,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Recordings()),
+                      );
+                    },
                     color: Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -151,7 +160,12 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
                     height: 40.0,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SosSettings()),
+                      );
+                    },
                     color: Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -168,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.1,
                           child: Icon(
-                            Icons.settings,
+                            Icons.settings_outlined,
                             size: 50,
                           ),
                         ),
@@ -191,7 +205,12 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
                     height: 40.0,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Maps()),
+                      );
+                    },
                     color: Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -225,7 +244,12 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
                     height: 40.0,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Audio()),
+                      );
+                    },
                     color: Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -259,32 +283,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 30),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: GNav(
-              color: Colors.black,
-              activeColor: Colors.white,
-              tabBackgroundColor: Color.fromRGBO(238, 75, 76, 1),
-              gap: 8,
-              padding: EdgeInsets.all(20),
-              tabs: [
-                GButton(
-                  icon: Icons.home_rounded,
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.question_answer_sharp,
-                  text: 'FAQ',
-                ),
-                GButton(
-                  icon: Icons.person_2_outlined,
-                  text: 'Profile',
-                ),
-              ]),
-        ),
-      ),
+      bottomNavigationBar: NavBar(),
     );
   }
 }
