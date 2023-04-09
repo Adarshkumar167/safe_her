@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../components/nav_bar.dart';
+const LatLng currentLocation = LatLng(23.17648611, 80.02049167);
 
 class Maps extends StatefulWidget {
   const Maps({super.key});
@@ -10,6 +11,8 @@ class Maps extends StatefulWidget {
 }
 
 class _MapsState extends State<Maps> {
+  late GoogleMapController mapController;
+  final Map<String, Marker> _markers = {};
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,9 +100,39 @@ class _MapsState extends State<Maps> {
               ],
             ),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.9,
+            child: GoogleMap(
+              initialCameraPosition: const CameraPosition(
+                target: currentLocation,
+                zoom: 14,
+              ),
+              onMapCreated: (controller) {
+                mapController = controller;
+                addMarker('test', currentLocation);
+              },
+              markers: _markers.values.toSet(),
+            ),
+          ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
     );
+  }
+
+  addMarker(String id, LatLng location) async {
+    // var markerIcon = await BitmapDescriptor.fromAssetImage(
+    //     const ImageConfiguration(size: Size(0.1, 0.1)),
+    //     'assets/images/girl.png');
+    var marker = Marker(
+      markerId: MarkerId(id),
+      position: location,
+      infoWindow: const InfoWindow(
+        title: 'Aaryabhatta Hostel',
+        snippet: 'Boys Hostel for pre-final year student.',
+      ),
+      // icon: markerIcon
+    );
+    _markers[id] = marker;
+    setState(() {});
   }
 }
