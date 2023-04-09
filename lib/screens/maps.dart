@@ -17,17 +17,19 @@ class _MapsState extends State<Maps> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4467,
+            height: MediaQuery.of(context).size.height * 0.1,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(25),
+                  padding: EdgeInsets.all(
+                      MediaQuery.of(context).size.height * 0.025),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.16,
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
                             height: 40.0,
                             onPressed: () {
@@ -53,7 +55,7 @@ class _MapsState extends State<Maps> {
                             )),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.48,
+                        width: MediaQuery.of(context).size.width * 0.45,
                         child: const Text(
                           'Maps',
                           textAlign: TextAlign.center,
@@ -62,7 +64,8 @@ class _MapsState extends State<Maps> {
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.16,
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
                           height: 40.0,
                           onPressed: () {},

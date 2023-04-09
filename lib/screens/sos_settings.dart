@@ -17,19 +17,20 @@ class _SosSettingsState extends State<SosSettings> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4467,
+            height: MediaQuery.of(context).size.height * 0.1,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(25),
+                  padding: EdgeInsets.all(
+                      MediaQuery.of(context).size.height * 0.025),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.16,
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
-                            height: 40.0,
                             onPressed: () {
                               Navigator.pop(context);
                             },
@@ -53,7 +54,7 @@ class _SosSettingsState extends State<SosSettings> {
                             )),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.48,
+                        width: MediaQuery.of(context).size.width * 0.45,
                         child: const Text(
                           'SOS Settings',
                           textAlign: TextAlign.center,
@@ -62,9 +63,9 @@ class _SosSettingsState extends State<SosSettings> {
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.16,
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
-                          height: 40.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: const Color.fromRGBO(238, 75, 76, 1),

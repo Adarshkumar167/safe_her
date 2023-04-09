@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.465,
+            height: MediaQuery.of(context).size.height * 0.45,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               color: Color.fromRGBO(37, 43, 57, 1),
@@ -34,14 +34,15 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(25),
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.05),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.3,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
-                            height: 40.0,
                             onPressed: () {},
                             color: Colors.white,
                             textColor: const Color.fromRGBO(238, 75, 76, 1),
@@ -69,8 +70,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.3,
+                        height: MediaQuery.of(context).size.height * 0.05,
                         child: MaterialButton(
-                            height: 40.0,
                             onPressed: () {},
                             color: const Color.fromRGBO(238, 75, 76, 1),
                             textColor: Colors.white,
@@ -88,15 +89,15 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 150,
-                      width: 150,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      width: MediaQuery.of(context).size.height * 0.2,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/logo_1.png'),
@@ -106,6 +107,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.07,
                 ),
               ],
             ),
@@ -118,7 +122,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.height * 0.15,
                 child: MaterialButton(
                     height: 40.0,
                     onPressed: () {
@@ -158,7 +162,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.height * 0.15,
                 child: MaterialButton(
                     height: 40.0,
                     onPressed: () {
@@ -204,7 +208,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.height * 0.15,
                 child: MaterialButton(
                     height: 40.0,
                     onPressed: () {
@@ -243,7 +247,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.width * 0.3,
+                height: MediaQuery.of(context).size.height * 0.15,
                 child: MaterialButton(
                     height: 40.0,
                     onPressed: () {
@@ -282,6 +286,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
         ],
       ),
       bottomNavigationBar: const NavBar(),
