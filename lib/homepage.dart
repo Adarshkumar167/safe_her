@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:safe_her/components/navBar.dart';
+import 'package:safe_her/components/nav_bar.dart';
 import 'package:safe_her/screens/audio.dart';
 import 'package:safe_her/screens/maps.dart';
 import 'package:safe_her/screens/recordings.dart';
-import 'package:safe_her/screens/sosSettings.dart';
+import 'package:safe_her/screens/sos_settings.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -22,9 +22,9 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.4729,
+            height: MediaQuery.of(context).size.height * 0.465,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromRGBO(37, 43, 57, 1),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20.0),
@@ -38,14 +38,14 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.3,
                         child: MaterialButton(
                             height: 40.0,
                             onPressed: () {},
                             color: Colors.white,
-                            textColor: Color.fromRGBO(238, 75, 76, 1),
-                            shape: RoundedRectangleBorder(
+                            textColor: const Color.fromRGBO(238, 75, 76, 1),
+                            shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10.0),
                                 topRight: Radius.circular(10.0),
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             child: Row(
-                              children: [
+                              children: const [
                                 Icon(
                                   Icons.location_on_outlined,
                                   size: 18,
@@ -67,14 +67,14 @@ class _HomePageState extends State<HomePage> {
                               ],
                             )),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.3,
                         child: MaterialButton(
                             height: 40.0,
                             onPressed: () {},
-                            color: Color.fromRGBO(238, 75, 76, 1),
+                            color: const Color.fromRGBO(238, 75, 76, 1),
                             textColor: Colors.white,
-                            shape: RoundedRectangleBorder(
+                            shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10.0),
                                 topRight: Radius.circular(10.0),
@@ -82,13 +82,13 @@ class _HomePageState extends State<HomePage> {
                                 bottomRight: Radius.circular(10.0),
                               ),
                             ),
-                            child:
-                                Text('SOS', style: TextStyle(fontSize: 18.0))),
+                            child: const Text('SOS',
+                                style: TextStyle(fontSize: 18.0))),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       height: 150,
                       width: 150,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/logo_1.png'),
                           fit: BoxFit.fill,
@@ -111,12 +111,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: MediaQuery.of(context).size.height * 0.05,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
@@ -124,12 +124,13 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Recordings()),
+                        MaterialPageRoute(
+                            builder: (context) => const Recordings()),
                       );
                     },
-                    color: Color.fromRGBO(37, 43, 57, 1),
+                    color: const Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
@@ -139,15 +140,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.1,
-                          child: Icon(
+                          child: const Icon(
                             Icons.record_voice_over_outlined,
                             size: 50,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Recordings',
                           style: TextStyle(fontSize: 14.0),
                           textAlign: TextAlign.center,
@@ -155,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     )),
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
@@ -163,12 +164,13 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SosSettings()),
+                        MaterialPageRoute(
+                            builder: (context) => const SosSettings()),
                       );
                     },
-                    color: Color.fromRGBO(37, 43, 57, 1),
+                    color: const Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
@@ -178,15 +180,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.1,
-                          child: Icon(
+                          child: const Icon(
                             Icons.settings_outlined,
                             size: 50,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'SOS Settings',
                           style: TextStyle(fontSize: 12.0),
                           textAlign: TextAlign.center,
@@ -196,11 +198,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          SizedBox(height: 30),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
@@ -208,12 +210,12 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Maps()),
+                        MaterialPageRoute(builder: (context) => const Maps()),
                       );
                     },
-                    color: Color.fromRGBO(37, 43, 57, 1),
+                    color: const Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
@@ -223,15 +225,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.1,
-                          child: Icon(
+                          child: const Icon(
                             Icons.location_on_outlined,
                             size: 50,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Maps',
                           style: TextStyle(fontSize: 14.0),
                           textAlign: TextAlign.center,
@@ -239,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     )),
               ),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: MediaQuery.of(context).size.width * 0.3,
                 child: MaterialButton(
@@ -247,12 +249,12 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Audio()),
+                        MaterialPageRoute(builder: (context) => const Audio()),
                       );
                     },
-                    color: Color.fromRGBO(37, 43, 57, 1),
+                    color: const Color.fromRGBO(37, 43, 57, 1),
                     textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0),
@@ -262,15 +264,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Column(
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width * 0.2,
                           height: MediaQuery.of(context).size.height * 0.1,
-                          child: Icon(
+                          child: const Icon(
                             Icons.volume_down_outlined,
                             size: 50,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Audio',
                           style: TextStyle(fontSize: 14.0),
                           textAlign: TextAlign.center,
@@ -280,10 +282,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          SizedBox(height: 30),
         ],
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }

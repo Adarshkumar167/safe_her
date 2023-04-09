@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../components/navBar.dart';
+import '../components/nav_bar.dart';
 
 class Maps extends StatefulWidget {
   const Maps({super.key});
@@ -16,7 +16,7 @@ class _MapsState extends State<Maps> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.4467,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -26,7 +26,7 @@ class _MapsState extends State<Maps> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.16,
                         child: MaterialButton(
                             height: 40.0,
@@ -34,8 +34,8 @@ class _MapsState extends State<Maps> {
                               Navigator.pop(context);
                             },
                             color: Colors.white,
-                            textColor: Color.fromRGBO(238, 75, 76, 1),
-                            shape: RoundedRectangleBorder(
+                            textColor: const Color.fromRGBO(238, 75, 76, 1),
+                            shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10.0),
                                 topRight: Radius.circular(10.0),
@@ -44,7 +44,7 @@ class _MapsState extends State<Maps> {
                               ),
                             ),
                             child: Row(
-                              children: [
+                              children: const [
                                 Icon(
                                   Icons.arrow_back_ios_new,
                                   size: 18,
@@ -52,23 +52,23 @@ class _MapsState extends State<Maps> {
                               ],
                             )),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.48,
-                        child: Text(
+                        child: const Text(
                           'Maps',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.16,
                         child: MaterialButton(
                           height: 40.0,
                           onPressed: () {},
                           color: Colors.white,
-                          textColor: Color.fromRGBO(238, 75, 76, 1),
-                          shape: RoundedRectangleBorder(
+                          textColor: const Color.fromRGBO(238, 75, 76, 1),
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10.0),
                               topRight: Radius.circular(10.0),
@@ -79,7 +79,7 @@ class _MapsState extends State<Maps> {
                           child: Container(
                             width: 24.0,
                             height: 24.0,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage('assets/images/logo_2.png'),
                                 fit: BoxFit.contain,
@@ -96,7 +96,7 @@ class _MapsState extends State<Maps> {
           ),
         ],
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }

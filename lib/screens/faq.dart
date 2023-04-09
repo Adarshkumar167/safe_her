@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../components/nav_bar.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class Faq extends StatefulWidget {
+  const Faq({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<Faq> createState() => _FaqState();
 }
 
-class _ProfileState extends State<Profile> {
+class _FaqState extends State<Faq> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
