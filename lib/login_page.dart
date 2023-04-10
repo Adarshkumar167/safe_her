@@ -75,29 +75,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(
-              //       horizontal: MediaQuery.of(context).size.width * 0.1),
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       color: Colors.grey[200],
-              //       borderRadius: BorderRadius.circular(12),
-              //       border: Border.all(
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //     child: const Padding(
-              //       padding: EdgeInsets.only(left: 20.0),
-              //       child: TextField(
-              //         // controller: _emailController,
-              //         decoration: InputDecoration(
-              //           border: InputBorder.none,
-              //           hintText: 'Email',
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
@@ -144,29 +121,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(
-              //       horizontal: MediaQuery.of(context).size.width * 0.1),
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       color: Colors.grey[200],
-              //       borderRadius: BorderRadius.circular(12),
-              //       border: Border.all(
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //     child: const Padding(
-              //       padding: EdgeInsets.only(left: 20.0),
-              //       child: TextField(
-              //         // controller: _passwordController,
-              //         decoration: InputDecoration(
-              //           border: InputBorder.none,
-              //           hintText: 'Password',
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               Padding(
                 padding: EdgeInsets.symmetric(

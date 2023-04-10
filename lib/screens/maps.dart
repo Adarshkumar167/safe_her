@@ -120,9 +120,6 @@ class _MapsState extends State<Maps> {
   }
 
   addMarker(String id, LatLng location) async {
-    // var markerIcon = await BitmapDescriptor.fromAssetImage(
-    //     const ImageConfiguration(size: Size(0.1, 0.1)),
-    //     'assets/images/girl.png');
     var marker = Marker(
       markerId: MarkerId(id),
       position: location,
@@ -130,7 +127,6 @@ class _MapsState extends State<Maps> {
         title: 'Aaryabhatta Hostel',
         snippet: 'Boys Hostel for pre-final year student.',
       ),
-      // icon: markerIcon
     );
     _markers[id] = marker;
     setState(() {});

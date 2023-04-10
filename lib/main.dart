@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:safe_her/login_page.dart';
 import 'package:safe_her/main_page.dart';
-// import 'homepage.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,9 +24,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SafeHer',
       home: MainPage(),
-      // home: HomePage(
-      //   title: 'Women Safety Device App',
-      // ),
     );
   }
 }
