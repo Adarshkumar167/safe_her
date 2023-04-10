@@ -70,7 +70,7 @@ flutter:
   assets:
     - assets/images/logo_1.png
     - assets/images/logo_2.png
-    - assets/images/girl.png
+    - assets/images/main_icon.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
