@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,8 +9,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // final _emailController = TextEditingController();
-  // final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signIn() async {
+    // await FirebaseAuth.instance
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,26 +65,48 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //       horizontal: MediaQuery.of(context).size.width * 0.1),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Colors.grey[200],
+              //       borderRadius: BorderRadius.circular(12),
+              //       border: Border.all(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //     child: const Padding(
+              //       padding: EdgeInsets.only(left: 20.0),
+              //       child: TextField(
+              //         // controller: _emailController,
+              //         decoration: InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: 'Email',
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.white,
-                    ),
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: TextField(
-                      // controller: _emailController,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Email',
+                child: TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.white,
                       ),
+                      borderRadius: BorderRadius.circular(12),
                     ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.deepPurple),
+                    ),
+                    hintText: 'Email',
+                    fillColor: Colors.grey[200],
+                    filled: true,
                   ),
                 ),
               ),
@@ -86,44 +114,68 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.white,
-                    ),
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: TextField(
-                      // controller: _passwordController,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Password',
+                child: TextField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.white,
                       ),
+                      borderRadius: BorderRadius.circular(12),
                     ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.deepPurple),
+                    ),
+                    hintText: 'Password',
+                    fillColor: Colors.grey[200],
+                    filled: true,
                   ),
                 ),
               ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //       horizontal: MediaQuery.of(context).size.width * 0.1),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Colors.grey[200],
+              //       borderRadius: BorderRadius.circular(12),
+              //       border: Border.all(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //     child: const Padding(
+              //       padding: EdgeInsets.only(left: 20.0),
+              //       child: TextField(
+              //         // controller: _passwordController,
+              //         decoration: InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: 'Password',
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.2),
-                child: Container(
-                  padding:
-                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
+                child: GestureDetector(
+                  child: Container(
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.height * 0.02),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
                     ),
                   ),
                 ),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061302366999",
+    "project_id": "safeher-383121",
+    "storage_bucket": "safeher-383121.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061302366999:android:3b642a88890e200dd8fd52",
+        "android_client_info": {
+          "package_name": "com.example.safe_her"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061302366999-rsl001ts7f8fvaae6dk5ren7ttoqp2h8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuiwqDkeDxe4ODwa7inr9pKGu_Ip9wij8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061302366999-rsl001ts7f8fvaae6dk5ren7ttoqp2h8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
