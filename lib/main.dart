@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:safe_her/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+// import 'package:safe_her/login_page.dart';
+import 'package:safe_her/main_page.dart';
 // import 'homepage.dart';
 
 // void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SafeHer',
-      home: LoginPage(),
+      home: MainPage(),
       // home: HomePage(
       //   title: 'Women Safety Device App',
       // ),
