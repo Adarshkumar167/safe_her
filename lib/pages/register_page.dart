@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,18 @@ class _RegisterPageState extends State<RegisterPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmpasswordController = TextEditingController();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+  final _ageController = TextEditingController();
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     _confirmpasswordController.dispose();
+    _firstNameController.dispose();
+    _lastNameController.dispose();
+    _ageController.dispose();
     super.dispose();
   }
 
@@ -28,7 +35,23 @@ class _RegisterPageState extends State<RegisterPage> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+      addUserDetails(
+        _firstNameController.text.trim(),
+        _lastNameController.text.trim(),
+        _emailController.text.trim(),
+        int.parse(_ageController.text.trim()),
+      );
     }
+  }
+
+  Future addUserDetails(
+      String firstName, String lastName, String email, int age) async {
+    await FirebaseFirestore.instance.collection('users').add({
+      'first name': firstName,
+      'last name': lastName,
+      'email': email,
+      'age': age,
+    });
   }
 
   bool passwordConfirmed() {
@@ -47,23 +70,6 @@ class _RegisterPageState extends State<RegisterPage> {
         body: SingleChildScrollView(
           child: Center(
             child: Column(children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.25,
-                    width: MediaQuery.of(context).size.height * 0.25,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/main_icon.png'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.1),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.08,
@@ -93,6 +99,78 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
                 child: TextField(
+                  controller: _firstNameController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
+                    ),
+                    hintText: 'First Name',
+                    fillColor: Colors.grey[200],
+                    filled: true,
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.1),
+                child: TextField(
+                  controller: _lastNameController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
+                    ),
+                    hintText: 'Last Name',
+                    fillColor: Colors.grey[200],
+                    filled: true,
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.1),
+                child: TextField(
+                  controller: _ageController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
+                    ),
+                    hintText: 'Age',
+                    fillColor: Colors.grey[200],
+                    filled: true,
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.1),
+                child: TextField(
                   controller: _emailController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -103,7 +181,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
                     ),
                     hintText: 'Email',
                     fillColor: Colors.grey[200],
@@ -127,7 +206,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
                     ),
                     hintText: 'Password',
                     fillColor: Colors.grey[200],
@@ -151,7 +231,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
                     ),
                     hintText: 'Confirm Password',
                     fillColor: Colors.grey[200],
@@ -169,7 +250,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     padding: EdgeInsets.all(
                         MediaQuery.of(context).size.height * 0.02),
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: const Color.fromRGBO(238, 75, 76, 1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Center(

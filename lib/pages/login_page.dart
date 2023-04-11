@@ -91,7 +91,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
                     ),
                     hintText: 'Email',
                     fillColor: Colors.grey[200],
@@ -115,7 +116,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.deepPurple),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(238, 75, 76, 1)),
                     ),
                     hintText: 'Password',
                     fillColor: Colors.grey[200],
@@ -162,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: EdgeInsets.all(
                         MediaQuery.of(context).size.height * 0.02),
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: const Color.fromRGBO(238, 75, 76, 1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Center(
