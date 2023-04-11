@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../components/nav_bar.dart';
-
 class Audio extends StatefulWidget {
   const Audio({super.key});
 
@@ -97,7 +95,6 @@ class _AudioState extends State<Audio> {
           ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
     );
   }
 }

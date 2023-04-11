@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../components/nav_bar.dart';
-
 class SosSettings extends StatefulWidget {
   const SosSettings({super.key});
 
@@ -97,7 +95,6 @@ class _SosSettingsState extends State<SosSettings> {
           ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
     );
   }
 }

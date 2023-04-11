@@ -17,6 +17,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _ageController = TextEditingController();
+  bool _passwordVisible = false;
+  bool _passwordVisible2 = false;
 
   @override
   void dispose() {
@@ -195,7 +197,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
                 child: TextField(
-                  obscureText: true,
+                  obscureText: !_passwordVisible, // Toggle password visibility
                   controller: _passwordController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -212,6 +214,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     hintText: 'Password',
                     fillColor: Colors.grey[200],
                     filled: true,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _passwordVisible
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -220,7 +235,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
                 child: TextField(
-                  obscureText: true,
+                  obscureText: !_passwordVisible2, // Toggle password visibility
                   controller: _confirmpasswordController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -237,6 +252,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     hintText: 'Confirm Password',
                     fillColor: Colors.grey[200],
                     filled: true,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _passwordVisible2
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible2 = !_passwordVisible2;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -250,7 +278,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     padding: EdgeInsets.all(
                         MediaQuery.of(context).size.height * 0.02),
                     decoration: BoxDecoration(
-                      color: const Color.fromRGBO(238, 75, 76, 1),
+                      color: const Color.fromRGBO(37, 43, 57, 1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Center(

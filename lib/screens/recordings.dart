@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../components/nav_bar.dart';
-
 class Recordings extends StatefulWidget {
   const Recordings({super.key});
 
@@ -97,7 +95,6 @@ class _RecordingsState extends State<Recordings> {
           ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
     );
   }
 }

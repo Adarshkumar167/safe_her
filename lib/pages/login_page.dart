@@ -13,6 +13,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _passwordVisible = false;
 
   Future signIn() async {
     showDialog(
@@ -115,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1),
                 child: TextField(
-                  obscureText: true,
+                  obscureText: !_passwordVisible, // Toggle password visibility
                   controller: _passwordController,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
@@ -132,6 +133,19 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: 'Password',
                     fillColor: Colors.grey[200],
                     filled: true,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _passwordVisible
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -174,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: EdgeInsets.all(
                         MediaQuery.of(context).size.height * 0.02),
                     decoration: BoxDecoration(
-                      color: const Color.fromRGBO(238, 75, 76, 1),
+                      color: const Color.fromRGBO(37, 43, 57, 1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Center(
