@@ -46,7 +46,7 @@ class _ForgotPassowrdPageState extends State<ForgotPassowrdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(238, 75, 76, 1),
+        backgroundColor: const Color.fromRGBO(37, 43, 57, 1),
         elevation: 0,
       ),
       body: Column(
@@ -75,7 +75,8 @@ class _ForgotPassowrdPageState extends State<ForgotPassowrdPage> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color: Colors.deepPurple),
+                  borderSide:
+                      const BorderSide(color: Color.fromRGBO(37, 43, 57, 1)),
                 ),
                 hintText: 'Email',
                 fillColor: Colors.grey[200],
@@ -86,7 +87,7 @@ class _ForgotPassowrdPageState extends State<ForgotPassowrdPage> {
           SizedBox(height: MediaQuery.of(context).size.height * 0.01),
           MaterialButton(
             onPressed: passwordReset,
-            color: const Color.fromRGBO(238, 75, 76, 1),
+            color: const Color.fromRGBO(37, 43, 57, 1),
             child: const Text(
               'Reset Password',
               style: TextStyle(color: Colors.white),

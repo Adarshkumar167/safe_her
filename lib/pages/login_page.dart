@@ -15,10 +15,20 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
+
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pop();
   }
 
   @override
@@ -92,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Email',
                     fillColor: Colors.grey[200],
@@ -117,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Password',
                     fillColor: Colors.grey[200],

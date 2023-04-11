@@ -110,7 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'First Name',
                     fillColor: Colors.grey[200],
@@ -134,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Last Name',
                     fillColor: Colors.grey[200],
@@ -158,7 +158,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Age',
                     fillColor: Colors.grey[200],
@@ -182,7 +182,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Email',
                     fillColor: Colors.grey[200],
@@ -207,7 +207,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Password',
                     fillColor: Colors.grey[200],
@@ -232,7 +232,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(
-                          color: Color.fromRGBO(238, 75, 76, 1)),
+                          color: Color.fromRGBO(37, 43, 57, 1)),
                     ),
                     hintText: 'Confirm Password',
                     fillColor: Colors.grey[200],
