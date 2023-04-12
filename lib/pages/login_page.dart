@@ -64,87 +64,91 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.08,
-                child: Column(
-                  children: [
-                    const Text(
-                      'SAFEHER',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
+              Column(
+                children: [
+                  Text(
+                    'SAFEHER',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.of(context).size.height * 0.04,
                     ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  Text(
+                    'Welcome back',
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height * 0.02,
                     ),
-                    const Text(
-                      'Welcome back',
-                      style: TextStyle(
-                        fontSize: 21,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.1),
-                child: TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Colors.white,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.08,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.1),
+                  child: TextField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      borderRadius: BorderRadius.circular(12),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(37, 43, 57, 1)),
+                      ),
+                      hintText: 'Email',
+                      fillColor: Colors.grey[200],
+                      filled: true,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                          color: Color.fromRGBO(37, 43, 57, 1)),
-                    ),
-                    hintText: 'Email',
-                    fillColor: Colors.grey[200],
-                    filled: true,
                   ),
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.1),
-                child: TextField(
-                  obscureText: !_passwordVisible, // Toggle password visibility
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Colors.white,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.08,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.1),
+                  child: TextField(
+                    obscureText:
+                        !_passwordVisible, // Toggle password visibility
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                          color: Color.fromRGBO(37, 43, 57, 1)),
-                    ),
-                    hintText: 'Password',
-                    fillColor: Colors.grey[200],
-                    filled: true,
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        _passwordVisible
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
-                        color: Colors.grey,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(
+                            color: Color.fromRGBO(37, 43, 57, 1)),
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _passwordVisible = !_passwordVisible;
-                        });
-                      },
+                      hintText: 'Password',
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _passwordVisible
+                              ? Icons.visibility_off_outlined
+                              : Icons.visibility_outlined,
+                          color: Colors.grey,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ),
@@ -167,11 +171,12 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         );
                       },
-                      child: const Text(
+                      child: Text(
                         'Forgot Password?',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue,
+                          fontSize: MediaQuery.of(context).size.height * 0.02,
                         ),
                       ),
                     ),
@@ -185,19 +190,21 @@ class _LoginPageState extends State<LoginPage> {
                 child: GestureDetector(
                   onTap: signIn,
                   child: Container(
+                    height: MediaQuery.of(context).size.height * 0.07,
                     padding: EdgeInsets.all(
                         MediaQuery.of(context).size.height * 0.02),
                     decoration: BoxDecoration(
                       color: const Color.fromRGBO(37, 43, 57, 1),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'Sign In',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.02),
                       ),
                     ),
                   ),
@@ -207,24 +214,27 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     'Not a member? ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.of(context).size.height * 0.02,
                     ),
                   ),
                   GestureDetector(
                     onTap: widget.showRegisterPage,
-                    child: const Text(
+                    child: Text(
                       'Register now',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
+                        fontSize: MediaQuery.of(context).size.height * 0.02,
                       ),
                     ),
                   )
                 ],
-              )
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.07),
             ]),
           ),
         ));
