@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../components/nav_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -10,10 +9,25 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      bottomNavigationBar: NavBar(),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Signed in as ${user.email!}',
+          style: const TextStyle(color: Colors.black),
+        ),
+        MaterialButton(
+          height: MediaQuery.of(context).size.height * 0.05,
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+          },
+          color: Colors.deepPurple,
+          child: const Text('Sign Out'),
+        ),
+      ],
     );
   }
 }
