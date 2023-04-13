@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                             width: MediaQuery.of(context).size.width * 0.2,
                             height: MediaQuery.of(context).size.height * 0.1,
                             child: const Icon(
-                              Icons.record_voice_over_outlined,
+                              Icons.video_collection_outlined,
                               size: 50,
                             ),
                           ),

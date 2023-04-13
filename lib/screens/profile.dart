@@ -24,8 +24,11 @@ class _ProfileState extends State<Profile> {
           onPressed: () {
             FirebaseAuth.instance.signOut();
           },
-          color: Colors.deepPurple,
-          child: const Text('Sign Out'),
+          color: const Color.fromRGBO(37, 43, 57, 1),
+          child: const Text(
+            'Sign Out',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ],
     );

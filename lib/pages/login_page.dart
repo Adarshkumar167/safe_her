@@ -71,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.of(context).size.height * 0.04,
+                      color: const Color.fromRGBO(238, 75, 76, 1),
                     ),
                   ),
                   SizedBox(
@@ -234,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.07),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             ]),
           ),
         ));
