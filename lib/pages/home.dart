@@ -57,8 +57,8 @@ class _HomeState extends State<Home> {
                                   bottomRight: Radius.circular(10.0),
                                 ),
                               ),
-                              child: Row(
-                                children: const [
+                              child: const Row(
+                                children: [
                                   Icon(
                                     Icons.location_on_outlined,
                                     size: 18,

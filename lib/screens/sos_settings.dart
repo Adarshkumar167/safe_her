@@ -42,8 +42,8 @@ class _SosSettingsState extends State<SosSettings> {
                                 bottomRight: Radius.circular(10.0),
                               ),
                             ),
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 Icon(
                                   Icons.arrow_back_ios_new,
                                   size: 18,

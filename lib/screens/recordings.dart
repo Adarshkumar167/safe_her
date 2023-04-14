@@ -42,8 +42,8 @@ class _RecordingsState extends State<Recordings> {
                                 bottomRight: Radius.circular(10.0),
                               ),
                             ),
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 Icon(
                                   Icons.arrow_back_ios_new,
                                   size: 18,
