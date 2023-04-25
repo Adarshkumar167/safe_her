@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+// import 'package:geolocator/geolocator.dart';
 
 const LatLng currentLocation = LatLng(23.17648611, 80.02049167);
 
@@ -114,6 +115,13 @@ class _MapsState extends State<Maps> {
               markers: _markers.values.toSet(),
             ),
           ),
+          // FloatingActionButton(onPressed: () {
+          //   getCurrnetLocation().then((value) {
+          //     print('my current location');
+          //     print(
+          //         value.latitude.toString() + " " + value.longitude.toString());
+          //   });
+          // }),
         ],
       ),
     );
@@ -131,4 +139,13 @@ class _MapsState extends State<Maps> {
     _markers[id] = marker;
     setState(() {});
   }
+
+  // Future<Position> getCurrnetLocation() async {
+  //   await Geolocator.requestPermission()
+  //       .then((value) {})
+  //       .onError((error, stackTrace) {
+  //     print('error' + error.toString());
+  //   });
+  //   return await Geolocator.getCurrentPosition();
+  // }
 }

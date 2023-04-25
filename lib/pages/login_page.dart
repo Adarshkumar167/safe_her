@@ -23,13 +23,36 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      // ignore: use_build_context_synchronously
+      Navigator.of(context).pop();
+    } on FirebaseAuthException catch (e) {
+      Navigator.of(context).pop();
+      showErrorMessage(e.code);
+    }
+  }
 
-    // ignore: use_build_context_synchronously
-    Navigator.of(context).pop();
+  void showErrorMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromRGBO(37, 43, 57, 1),
+          title: Center(
+            child: Text(
+              message,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
