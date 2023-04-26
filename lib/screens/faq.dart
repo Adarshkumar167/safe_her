@@ -92,7 +92,7 @@ class _FaqState extends State<Faq> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
             child: ListView.builder(
               itemCount: questions.length,
               itemBuilder: (context, index) {
@@ -110,7 +110,7 @@ class _FaqState extends State<Faq> {
                   ),
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Text(
                         answer!,
                         style: const TextStyle(
