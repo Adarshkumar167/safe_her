@@ -27,16 +27,37 @@ class _ProfileState extends State<Profile> {
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.2,
-                width: MediaQuery.of(context).size.height * 0.2,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/women.png'),
-                    fit: BoxFit.fill,
+              Stack(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.height * 0.2,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/women.png'),
+                        fit: BoxFit.fill,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                  shape: BoxShape.circle,
-                ),
+                  Positioned(
+                    bottom: 0,
+                    right: 15,
+                    child: Container(
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: const Color.fromRGBO(37, 43, 57, 1),
+                      ),
+                      child: const Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               // Text(
