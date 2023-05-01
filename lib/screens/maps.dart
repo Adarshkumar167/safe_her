@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-// import 'package:geolocator/geolocator.dart';
 
-const LatLng currentLocation = LatLng(23.17648611, 80.02049167);
+const LatLng currentLocation = LatLng(23.177366666666668, 80.025);
 
 class Maps extends StatefulWidget {
   const Maps({super.key});

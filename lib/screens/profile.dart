@@ -65,7 +65,7 @@ class _ProfileState extends State<Profile> {
               //   style: const TextStyle(color: Colors.black),
               // ),
               const Text(
-                'Hi Adarsh Kumar',
+                'Hi ',
                 style: TextStyle(color: Colors.black, fontSize: 24),
               ),
               Text(

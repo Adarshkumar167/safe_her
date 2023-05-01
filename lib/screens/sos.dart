@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Recordings extends StatefulWidget {
-  const Recordings({super.key});
+class Sos extends StatefulWidget {
+  const Sos({super.key});
 
   @override
-  State<Recordings> createState() => _RecordingsState();
+  State<Sos> createState() => _SosState();
 }
 
-class _RecordingsState extends State<Recordings> {
+class _SosState extends State<Sos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +54,7 @@ class _RecordingsState extends State<Recordings> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.45,
                         child: const Text(
-                          'Recordings',
+                          'SOS',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
